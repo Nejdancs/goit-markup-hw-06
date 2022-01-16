@@ -223,10 +223,10 @@ img {
   color: var(--primary-text-color);
 }
 
-.header-contacts-icon {
-  margin-right: 10px;
+.site-nav-link {
+  position: relative;
 
-  fill: currentColor;
+  color: var(--secondary-text-color);
 }
 
 .current,
@@ -237,10 +237,10 @@ img {
   color: var(--accent-color);
 }
 
-.site-nav-link {
-  position: relative;
+.header-contacts-icon {
+  margin-right: 10px;
 
-  color: var(--secondary-text-color);
+  fill: currentColor;
 }
 
 /* Подчеркивание */

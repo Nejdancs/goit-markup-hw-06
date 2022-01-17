@@ -959,6 +959,10 @@ img {
   border-color: var(--accent-color);
 }
 
+.form-input:-webkit-autofill {
+  box-shadow: inset 0 0 0 100px #ffffff;
+}
+
 /* Иконка */
 
 .form-icon {
@@ -1064,11 +1068,7 @@ img {
 }
 
 .checkbox-input:focus + .checkbox-icon {
-  outline: 1px solid #212121;
-}
-
-.checkbox-input:focus:checked + .checkbox-icon {
-  outline: 1px solid #212121;
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #000000;
 }
 
 .checkbox-input:checked + .checkbox-icon {

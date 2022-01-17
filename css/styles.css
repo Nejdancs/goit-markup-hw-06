@@ -787,7 +787,8 @@ img {
 
   background-color: rgba(0, 0, 0, 0.2);
 
-  transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
+  perspective: 400px;
+  transition: opacity 400ms var(--cubic), visibility 250ms var(--cubic);
 }
 
 .is-hidden {
@@ -800,7 +801,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scaleY(1);
+  transform: translate(-50%, -50%);
 
   width: 528px;
   padding: 40px;
@@ -811,11 +812,11 @@ img {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  transition: transform 250ms var(--cubic);
+  transition: transform 400ms var(--cubic);
 }
 
 .is-hidden .modal {
-  transform: translate(-50%, -50%) scaleY(0);
+  transform: translate(-50%, -100%) rotateX(-45deg);
 }
 
 /* Кнопка закрытия модалки */
@@ -834,6 +835,9 @@ img {
 
   background-color: #ffffff;
   color: #000000;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+
   cursor: pointer;
   outline: none;
 

@@ -111,7 +111,6 @@ img {
 
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
   transition: background-color 250ms var(--cubic);
 }
 
@@ -225,7 +224,6 @@ img {
 
 .site-nav-link {
   position: relative;
-
   color: var(--secondary-text-color);
 }
 
@@ -239,7 +237,6 @@ img {
 
 .header-contacts-icon {
   margin-right: 10px;
-
   fill: currentColor;
 }
 
@@ -406,7 +403,6 @@ img {
   border-radius: 0 0 4px 4px;
 
   background-color: #ffffff;
-
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -415,7 +411,6 @@ img {
 
 .team-card-content {
   padding: 30px 32px;
-
   text-align: center;
 }
 
@@ -453,8 +448,6 @@ img {
 }
 
 .clients-link {
-  color: #afb1b8;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -463,6 +456,7 @@ img {
   border: 1px solid;
   border-radius: 4px;
 
+  color: #afb1b8;
   transition: color 250ms var(--cubic);
 }
 
@@ -573,14 +567,13 @@ img {
   left: 0;
   top: 0;
   transform: translateY(100%);
-  opacity: 0;
 
   width: 100%;
   height: 100%;
   padding: 63px 24px;
 
   background-color: rgba(33, 150, 243, 0.9);
-
+  opacity: 0;
   transition: transform 250ms var(--cubic), opacity 500ms var(--cubic);
 }
 
@@ -631,7 +624,6 @@ img {
 .page-footer {
   padding-top: 60px;
   padding-bottom: 10px;
-
   background-color: #2f303a;
 }
 
@@ -649,7 +641,6 @@ img {
 
 .footer-logo {
   margin-bottom: 20px;
-
   color: #ffffff;
 }
 
@@ -723,8 +714,8 @@ img {
   background-color: transparent;
   color: #ffffff;
   font-size: 16px;
-  outline: none;
 
+  outline: none;
   transition: border-color 250ms var(--cubic);
 }
 
@@ -858,6 +849,7 @@ img {
   right: 100%;
   top: -1px;
   bottom: -1px;
+  transform: translateX(15px);
 
   display: inline-flex;
   align-items: center;
@@ -874,15 +866,14 @@ img {
 
   opacity: 0;
   visibility: hidden;
-  transform: translateX(15px);
   transition: visibility 250ms var(--cubic), transform 250ms var(--cubic),
     opacity 250ms var(--cubic), border-color 250ms var(--cubic), color 250ms var(--cubic);
 }
 
 .modal-btn-close:hover .btn-close-text,
 .modal-btn-close:focus .btn-close-text {
-  visibility: visible;
   transform: translateX(0);
+  visibility: visible;
   opacity: 1;
   border-color: rgba(0, 0, 0, 0.3);
   color: var(--accent-color);
@@ -901,6 +892,10 @@ img {
 
 /* Form
 ==================================================== */
+
+.form {
+  text-align: center;
+}
 
 .form-title {
   display: block;
@@ -921,6 +916,7 @@ img {
 
 /* Метка поля ввода  */
 
+.form-label-textarea,
 .form-label {
   position: absolute;
   left: 42px;
@@ -940,8 +936,22 @@ img {
   transform: translate(-42px, -38px);
 }
 
+/* Метка поля комента */
+
+.form-label-textarea {
+  top: 12px;
+  left: 16px;
+  transform: translateY(0);
+}
+
+.form-textarea:not(:placeholder-shown) + .form-label-textarea,
+.form-field:focus-within .form-label-textarea {
+  transform: translate(-16px, -30px);
+}
+
 /* Поле ввода */
 
+.form-textarea,
 .form-input {
   display: block;
   width: 100%;
@@ -955,12 +965,18 @@ img {
   transition: border-color 250ms var(--cubic);
 }
 
+.form-field:focus-within .form-textarea,
 .form-field:focus-within .form-input {
   border-color: var(--accent-color);
 }
 
-.form-input:-webkit-autofill {
-  box-shadow: inset 0 0 0 100px #ffffff;
+/* Поле коментария */
+
+.form-textarea {
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  resize: none;
 }
 
 /* Иконка */
@@ -999,53 +1015,6 @@ img {
 }
 .form-input:not(:placeholder-shown):invalid ~ .form-validation {
   background-image: url(../images/invalid.svg);
-}
-
-/* Поле коментария */
-
-.form-textarea {
-  display: block;
-  width: 100%;
-  height: 120px;
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-
-  outline: none;
-  resize: none;
-}
-
-.form-field:focus-within .form-textarea {
-  border-color: var(--accent-color);
-}
-
-.form-textarea::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-}
-
-/* Метка поля коммента */
-
-.form-label-textarea {
-  position: absolute;
-
-  top: 12px;
-  left: 16px;
-
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  cursor: text;
-
-  transition: transform 250ms var(--cubic);
-}
-
-.form-textarea:not(:placeholder-shown) + .form-label-textarea,
-.form-field:focus-within .form-label-textarea {
-  transform: translate(-16px, -30px);
 }
 
 /* Чекбокс соглашения */
@@ -1099,11 +1068,4 @@ img {
 
   width: 100%;
   border-bottom: 1px solid var(--accent-color);
-}
-
-/* Кнопка отправки формы */
-
-.form-btn-submit {
-  display: block;
-  margin: 0 auto;
 }
